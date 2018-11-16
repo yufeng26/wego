@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>经典胖妞</title>
+		<link rel="stylesheet" type="text/css" href="../css/login.css" />
+		<link rel="stylesheet" type="text/css" href="../layui/css/layui.css" />
+		<style type="text/css">
+			.pwdRemark{
+				height: 36px;
+				line-height: 36px;
+				color: red;  
+			}
+		</style>
+	</head>
+	<body>
+		<div class="login">
+			<div class="message">经典胖妞游戏管理后台</div>
+			<div id="darkbannerwrap"></div>
+				<input name="username" placeholder="用户名" required type="text" id="user_name">
+				<hr class="hr15">
+				<input name="password" placeholder="密码" required type="password" id="user_psd">
+				<div class="pwdRemark"></div>
+				<input value="登录" id="comform"  style="width:100%;" type="button">
+				<hr class="hr20">
+		</div>
+		<script src="../lib/jquery-1.12.2.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../lib/cookie.js"></script>
+		<script src="../layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/urlcommon.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//时时监控input表单
+			$("#user_psd").bind("input propertychange change", function(event) {
+				var userName = $("#user_name").val();
+				var user_pass = $("#user_psd").val();
+				if(userName != "" && user_pass != "") {
+					$(".pwdRemark").html("");
+				}
+			});
+
+			//键盘Enter键点击登录
+			$("body").keydown(function() {
+				if(event.keyCode == "13") { //keyCode=13是回车键
+					$('#comform').click();
+				}
+			});
+
+			$("#comform").click(function() {
+				var userName = $("#user_name").val();
+				var user_psd = $("#user_psd").val();
+				var accoutIP = localStorage.getItem("accoutIP");
+				if(accoutIP == null || accoutIP == undefined){
+					accoutIP = "";
+				}
+				if(userName != "" && user_psd != "") {
+					//跳转页面
+					window.location.href = "index.html";
+					/*$(".userRemark").html("");
+					$(".pwdRemark").html("");
+					var a = {
+						a_name: userName,
+						a_pwd: user_psd,
+						a_ip: accoutIP,
+						aPlatform:7 //当前管理后台的平台ID
+					};
+					$.ajax({
+						url: weburl + "/admin/login",
+						type: "POST",
+						data: JSON.stringify(a),
+						dataType: "json",
+						contentType: "application/json",
+						success: function(res) {
+							//debugger;
+							if(res.status == 1) {
+								//登录成功或获取用户的账户id
+								var accoutId = res.data.id;
+								//登录成功或获取用户的等级角色id
+								var rId = res.data.rId;
+								//登录成功或获取用户账户名称
+								var accoutName = res.data.aName;
+								//登录成功或获取用户所属平台
+								var platform = res.data.aPlatform;
+								//登录成功存一个已登录的状态,已登录state/188,有效期设为一天
+								cookie.set("state", "188", 1);
+								//存一下当前登录账户
+								cookie.set("a_name", accoutName, 1);
+								//存一下账户id
+								cookie.set("accoutId", accoutId, 1);
+								//存一下当前账户的角色id
+								cookie.set("rId", rId, 1);
+								//存一下平台
+								cookie.set("platform", platform, 1);
+								//清空错误提醒
+								$(".pwdRemark").html("");
+								//跳转页面
+							    window.location.href = "index.html";
+							} else {
+								$(".pwdRemark").html(res.msg);
+								cookie.delete("state");
+							}
+						}
+					});*/
+				}else{
+					alert("请完善账号密码信息！");
+				}
+
+			})
+		</script>

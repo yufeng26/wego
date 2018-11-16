@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>首页</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../layui/css/font.css">
+    <link rel="stylesheet" href="../css/conmon.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bombBox.css"/>
+    <style type="text/css">
+    	#explain{
+    		color: red; 
+    	}
+    	.toolspan{
+    		margin-left:10px;
+    	}
+    </style>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+    <div class="layui-logo"><a href="index.html">经典胖妞游戏管理后台</a></div>
+    <ul class="layui-nav layui-layout-right">
+	  <li class="layui-nav-item">
+	    <a href="javascript:;" id="clearbind">解除绑定</a>
+	    <a href="javascript:;" id="bindself">绑定本机</a>
+	  </li>
+	  <li class="layui-nav-item" lay-unselect="">
+	    <a href="javascript:;"><img src="../img/512.png" class="layui-nav-img"><span id="userName">admin</span></a>
+	    <dl class="layui-nav-child">
+	      <dd><a href="javascript:;" id="quit">安全退出</a></dd>
+	    </dl>
+	  </li>
+	</ul>
+</div>
+<div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+    	<ul class="layui-nav layui-nav-tree" lay-filter="kitNavbar" kit-navbar>
+    		<li class="layui-nav-item">
+       	    	<a href="javascript:;">首页</a>
+       	    </li>
+       	    <li class="layui-nav-item">
+			    <a class="javascript:;" href="javascript:;">现金运营管理<span class="layui-nav-more"></span></a>
+			    <dl class="layui-nav-child">
+			      <dd class="">
+			        <a href="javascript:;">全额清分统计表</a>
+			      </dd>
+			      <dd class="">
+			        <a href="javascript:;">坐支情况统计表</a>
+			      </dd>
+			    </dl>
+			</li>
+			<li class="layui-nav-item">
+			    <a class="javascript:;" href="javascript:;">公告管理<span class="layui-nav-more"></span></a>
+			    <dl class="layui-nav-child">
+			      <dd class="">
+			        <a href="javascript:;">公告列表</a>
+			      </dd>
+			    </dl>
+			</li>
+			<li class="layui-nav-item">
+			    <a class="javascript:;" href="javascript:;">跨行调款<span class="layui-nav-more"></span></a>
+			    <dl class="layui-nav-child">
+			      <dd class="">
+			        <a href="javascript:;">预约交款</a>
+			      </dd>
+			      <dd class="">
+			        <a href="javascript:;">调拨任务概况</a>
+			      </dd>
+			    </dl>
+			</li>
+			<li class="layui-nav-item">
+			    <a class="javascript:;" href="javascript:;">金库管理<span class="layui-nav-more"></span></a>
+			    <dl class="layui-nav-child">
+			      <dd class="">
+			        <a href="javascript:;">库存状态</a>
+			      </dd>
+			      <dd class="">
+			        <a href="javascript:;">清分状态</a>
+			      </dd>
+			      <dd class="">
+			        <a href="javascript:;">手动上传文件</a>
+			      </dd>
+			      <dd class="">
+			        <a href="javascript:;">查包</a>
+			      </dd>
+			      <dd class="">
+			        <a href="javascript:;">查捆</a>
+			      </dd>
+			      <dd class="">
+			        <a href="javascript:;">冠字号查询</a>
+			      </dd>
+			      <dd class="">
+			        <a href="javascript:;">库存上报</a>
+			      </dd>
+			      <dd class="">
+			        <a href="javascript:;">残损币上报</a>
+			      </dd>
+			      <dd class="">
+			        <a href="javascript:;">冠字号轨迹</a>
+			      </dd>
+			    </dl>
+			</li>
+			<li class="layui-nav-item">
+			    <a class="javascript:;" href="javascript:;">代理业务<span class="layui-nav-more"></span></a>
+			    <dl class="layui-nav-child">
+			      <dd class="">
+			        <a href="javascript:;">代理任务</a>
+			      </dd>
+			    </dl>
+			</li>
+			<li class="layui-nav-item">
+			    <a class="javascript:;" href="javascript:;">行内调款<span class="layui-nav-more"></span></a>
+			    <dl class="layui-nav-child">
+			      <dd class="">
+			        <a href="javascript:;">行内任务</a>
+			      </dd>
+			      <dd class="">
+			        <a href="javascript:;">现金出入库统计</a>
+			      </dd>
+			      <dd class="">
+			        <a href="javascript:;">出入库走势分析</a>
+			      </dd>
+			      <dd class="">
+			        <a href="javascript:;">网点交取款统计</a>
+			      </dd>
+			    </dl>
+			</li>
+			<li class="layui-nav-item">
+			    <a class="javascript:;" href="javascript:;">用户管理<span class="layui-nav-more"></span></a>
+			    <dl class="layui-nav-child">
+			      <dd class="">
+			        <a href="javascript:;">管理员</a>
+			      </dd>
+			      <dd class="">
+			        <a href="javascript:;">权限组</a>
+			      </dd>
+			      <dd class="">
+			        <a href="javascript:;">清分员管理</a>
+			      </dd>
+			      <dd class="">
+			        <a href="javascript:;">修改密码</a>
+			      </dd>
+			    </dl>
+			</li>
+			<li class="layui-nav-item">
+			    <a class="javascript:;" href="javascript:;">系统配置<span class="layui-nav-more"></span></a>
+			    <dl class="layui-nav-child">
+			      <dd class="">
+			        <a href="javascript:;">打包配置</a>
+			      </dd>
+			    </dl>
+			</li>
+			<li class="layui-nav-item">
+			    <a class="javascript:;" href="javascript:;">菜单管理<span class="layui-nav-more"></span></a>
+			    <dl class="layui-nav-child">
+			      <dd class="">
+			        <a href="javascript:;">后台菜单</a>
+			      </dd>
+			    </dl>
+			</li>
+        </ul>
+    </div>
+</div>
+   
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div class="mianbox">
+        	<div class="tltbox">
+        		<span class="layui-breadcrumb">
+	              <a href="/">会员列表</a>
+	            </span>
+	            <span class="layui-btn layui-btn-sm searchBtn" data-type="reload">查询</span>
+        	</div>
+        	<div class="searchbox">
+        		<div class="layui-row">
+				    <div class="layui-col-xs3">
+						<label for="u_id">会员id:</label>
+						<input type="text" placeholder="会员id" id="u_id">
+				    </div>
+				    <div class="layui-col-xs3">
+				      <label for="u_nickname">会员昵称:</label>
+					  <input type="text" placeholder="会员昵称" id="u_nickname">
+				    </div>
+				    <div class="layui-col-xs3">
+				      <label for="phone_no">手机号:</label>
+					  <input type="text" placeholder="会员手机号" id="phone_no">
+				    </div>
+				    <div class="layui-col-xs3">
+				      <label for="proxy_level">代理级别:</label>
+					  <select name="" class="appDay_item" id="proxy_level">
+		                         <option value="">无</option>
+		                         <option value="1">一级</option>
+		                         <option value="2">二级</option>
+		                         <option value="3">三级</option>
+		                         <option value="4">四级</option>
+		                         <option value="5">五级</option>
+		              </select>
+				    </div>
+				</div>
+				<div class="layui-row">
+				    <div class="layui-col-xs3">
+				      <label for="invite_code">邀请码:</label>
+					  <input type="text" placeholder="邀请码" id="invite_code">
+				    </div>
+				    <div class="layui-col-xs3">
+				       <label for="m_name">修改人:</label>
+					  <input type="text" placeholder="修改人" id="m_name">
+				    </div>
+				    <div class="layui-col-xs6">
+				      <div class="layui-inline">
+				      		<label for="">修改时间:</label>
+					        <div class="layui-input-inline">
+					              <input type="text" name="" class="layui-input" id="start_time" placeholder="开始时间" style="width: 180px;" >
+					        </div>
+					    </div>
+					    -
+					    <div class="layui-inline">
+					        <div class="layui-input-inline">
+					            <input type="text" name="" class="layui-input" id="end_time" placeholder="结束时间" style="width: 180px;" >
+					        </div>
+					    </div>
+				    </div>
+				</div>
+				<div class="layui-row">
+				    <div class="layui-col-xs3">
+				      <label for="goldNum">金币余额:</label>
+					  <input type="text" placeholder="金币余额" id="goldNum">
+				   </div>
+				</div>
+        	</div>
+        	<div class="tableList">
+        		<table id="userTable" class="layui-hide" lay-filter="test"></table>
+        	</div>
+        </div>
+    </div>
+	<div class="site-tree-mobile layui-hide">
+    <i class="layui-icon">&#xe602;</i>
+	</div>
+   <div class="site-mobile-shade"></div>
+</div>
+<!--会员修改弹窗-->
+<div class="commonBox" id="modify">
+	<!--<div class="conmonStyle">
+		<span id="explain">
+			使用说明：点券金币不能超过十亿
+		</span>
+	</div>-->
+	<div class="conmonStyle">
+	     		<label>支付宝用户名：</label><input type="text" placeholder="支付宝用户名" class="" id="payname" >
+	     	</div>
+	<div class="conmonStyle">
+	     		<label>支付宝账号：</label><input type="text" placeholder="输入支付宝账号" class="" id="payno" >
+	     	</div>
+	<div class="conmonStyle">
+	     		<label>银行卡开户名：</label><input type="text" placeholder="银行卡开户名" class="" id="bankname" >
+	</div>
+	<div class="conmonStyle">
+	     		<label>银行卡账号：</label><input type="text" placeholder="银行卡账号" class="" id="banknum" >
+	</div>
+	<div class="conmonStyle">
+	     		<label>银行卡开户行：</label><input type="text" placeholder="银行卡开户行" class="" id="bankaddr" >
+	</div> 
+	<div class="conmonStyle">
+	     		<label for="">代理级别:</label>
+					  <select name="" class="appDay_item" id="level">
+					  			 <option value="0">普通用户</option>
+		                         <option value="1">一级</option>
+		                         <option value="2">二级</option>
+		                         <option value="3">三级</option>
+		                         <option value="4">四级</option>
+		                         <option value="5">五级</option>
+		              </select>
+	</div>
+	<div class="btn">
+		<button id="commitBtn" class="commitBtn " >提交</button>
+	</div>
+	
+</div>
+<!--vip充值-->
+<div class="commonBox" id="rechargeLayer">
+	<div class="conmonStyle">
+	    <label style="width: 100px;">充值金额(￥)：</label><input type="text" placeholder="输入金额" class="" id="rechargeIpt"  onkeyup="this.value=this.value.replace(/[^0-9-]+/,'');">
+	</div>
+	<div class="conmonStyle">
+	    <label style="width: 100px;">账户到账金币：</label><span id="mathGold"></span>
+	</div>
+	<div class="btn">
+		<button  class="commitBtn " id="rechargeBtn">提交</button>
+	</div>
+	
+</div>
+<script src="../lib/jquery-1.12.2.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="../lib/cookie.js"></script>
+<script type="text/javascript" src="../js/urlcommon.js"></script>
+<script src="../layui/layui.js"></script>
+<script src="../layui/ruch.js"></script>
+<!--渲染表格数据-->
+<!--操作栏-->
+<script type="text/html" id="barDemo">
+	<a class="layui-btn layui-btn-xs" lay-event="edit">修改</a>
+	{{# if (d.is_close=== 0) { }}
+	    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="close">封号</a>
+		{{# } else if(d.is_close=== 1) { }}
+	    <a class="layui-btn layui-btn-warm layui-btn-xs" lay-event="open">解封</a>
+	{{# } }}
+	    <a class="layui-btn layui-btn-xs" lay-event="recharge">VIP调额</a>
+</script>
+<script type="text/html" id="switchTpl">
+	<!--转账功能0关，1开-->
+    {{# if (d.proxy_level > 0) { }}
+	    <input type="checkbox" name="paymoney" value="{{d.u_id}}" lay-skin="switch" lay-text="开|关" lay-filter="zzDemo" {{ d.bring_power== 1 ? 'checked' : '' }}>
+		{{# } else{ }}
+		<span>--</span>
+	{{# } }}
+</script>
+<script type="text/html" id="switchTp2">
+	<!--转账功能0关，1开-->
+    {{# if (d.proxy_level > 0) { }}
+	    <input type="checkbox" name="paymoney" value="{{d.u_id}}" lay-skin="switch" lay-text="开|关" lay-filter="zagent" {{ d.have_empower== 1 ? 'checked' : '' }}>
+		{{# } else{ }}
+		<span>--</span>
+	{{# } }}
+</script>
+<script type="textml" id="titleTpl">
+		{{# if (d.is_close=== 0) { }}
+		<span>正常</span>
+		{{# } else if(d.is_close=== 1) { }}
+		<span>封号</span>
+		{{# } else { }}
+		<span>其他</span>
+		{{# } }}
+</script>
+<!--注意：属性 lay-event="" 是模板的关键所在，值可随意定义-->
+	<script>
+		//获取充值比例
+		var blval ="";
+		$.ajax({
+			type:"get",
+			url:weburl+"/users_admin/vipScale",
+			async:true,
+			success:function(data){
+				if(data.status ==1){
+					blval = data.data.cValue;
+				}
+			}
+		});
+		
+			layui.use('table', function(){
+			  var table = layui.table
+                 ,form = layui.form;
+			  //第一个实例
+			  table.render({
+			    elem: '#userTable',
+			    height: 550,
+			    method: 'POST', //方式
+			    url: weburl + '/users_admin/users_list', //数据接口
+			    request:{
+			    	pageName: 'pageIndex',//页码的参数名称，默认：page
+  					limitName: 'pageSize' //每页数据量的参数名，默认：limit
+			    },
+			   /* where:{
+			    	u_id:userid
+			    },*/
+			    response:{
+			    	statusName: 'status', //数据状态的字段名称，默认：code
+					statusCode: 1,//成功的状态码，默认：0
+					msgName: 'msg' ,//状态信息的字段名称，默认：msg
+					countName: 'count', //数据总数的字段名称，默认：count
+					dataName: 'data' //数据列表的字段名称，默认：data
+			    },
+			    cols: [[ //表头
+			      {type:'numbers',title: '序号', fixed: 'left'},
+			      {field: 'u_id', title: '会员id', width:80, fixed: 'left'},
+			      {field: 'phone_no', title: '手机号', width:150},
+			      {field: 'u_nickname', title: '昵称',width: 180},
+			      {field: 'u_coincnt', title: '点券余额', width:100},
+			      {field: 'u_goldcnt', title: '金币余额', width: 100},
+			      {field: 'win_amount', title: '历史赢钱记录', width: 180},
+			      {field: 'lose_amount', title: '历史输钱记录', width: 135},
+			      {field: 'proxy_level', title: '代理级别', width: 180},
+			      {field: 'proxy_sum', title: '代理税收', width: 135},
+			      {field: 'invite_code', title: '邀请码', width: 180},
+			      {field: 'invite_uid', title: '代理人id', width: 100},
+			      {field: 'agent_name', title: '代理人昵称', width: 135},
+			      {field: 'login_time', title: '最近登录时间', width: 135,},
+			      {field: 'login_ip', title: '最近登录ip', width: 180},
+			      {field: 'c_time', title: '注册时间', width: 180},
+			      {field: 'register_ip', title: '注册ip', width: 135,},
+			      {field: 'is_close', title: '会员状态', width: 135,toolbar:'#titleTpl'},
+			      {field: 'u_alipayname', title: '支付宝用户名',width: 180},
+			      {field: 'u_alipayno', title: '支付宝账号', width: 180},
+			      {field: 'u_bankno', title: '银行卡号',width: 180},
+			      {field: 'u_bankname', title: '银行卡开户名', width: 180},
+			      {field: 'u_bankaddr', title: '银行卡开户行',width: 180},
+			      {field: 'm_name', title: '修改人', width: 100},
+			      {field: 'm_time', title: '修改时间', width: 180},
+			      {fixed: 'right', title: '代充', width:100, align:'center', templet: '#switchTpl', unresize: true},
+			      {fixed: 'right', title: '授权超级代理', width:120, align:'center', templet: '#switchTp2', unresize: true},
+			      {fixed: 'right', title: '操作', width:180, align:'center', toolbar:'#barDemo', unresize: true},
+			    ]],
+			    limit: 10 ,
+			    limits: [10, 20, 30, 40, 50] ,
+			    page:{
+			    	groups: 5 //只显示 5 个连续页码
+			    }
+			    //page: true //开启分页
+			    /*page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+				      layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+				      ,curr: 1 //设定初始在第 5 页
+				      ,groups: 1 //只显示 1 个连续页码
+				      ,first: false //不显示首页
+				      ,last: false //不显示尾页
+				      ,limit:10
+				   },*/
+			  });
+			
+			  //条件搜索
+			  $('.searchBtn').on('click', function(){	
+			      var u_id = $.trim($('#u_id').val());
+			      var u_nickname = $.trim($('#u_nickname').val());
+			      var phone_no = $.trim($('#phone_no').val());
+			      var invite_code = $.trim($('#invite_code').val());
+			      var m_name = $.trim($('#m_name').val());
+			      var m_start_time = $.trim($('#start_time').val());
+			      var m_end_time = $.trim($('#end_time').val());
+			      var proxy_level = $("#proxy_level option:selected").val();
+			      var goldNum = $.trim($('#goldNum').val());
+			      //执行重载
+			      table.reload('userTable', {
+			        page: {
+			          curr: 1 //重新从第 1 页开始
+			        },
+			        where: {
+			            u_id: u_id,
+			            u_nickname:u_nickname,
+			            phone_no:phone_no,
+			            invite_code:invite_code,
+			            m_name:m_name,
+			            m_start_time:m_start_time,
+			            m_end_time:m_end_time,
+			            proxy_level:proxy_level,
+			            u_goldcnt:goldNum
+			        }
+			      });
+			  });
+			  //监听转账功能操作
+			  form.on('switch(zzDemo)', function(obj){
+			  	//this.value存的是用户id，obj.elem.checked返回是是否
+			    //layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
+			     var uId = this.value;
+			     var ischecked = obj.elem.checked == true ? 1 : 0; 
+			     var zzData = {
+			     	u_id:uId,
+			     	bring_power:ischecked,
+			     	m_name:a_name
+			     };
+			     $.ajax({
+			     	type:"put",
+			     	url: weburl+"/users_admin/update_user",
+			     	data:JSON.stringify(zzData),
+					dataType:"json",
+					  contentType:"application/json",
+					success:function(data){
+					  	if(data.status == 1){
+					  		alert("修改成功！")
+					  	}else{
+					  		alert(data.msg);
+					  	}
+					}
+			     });
+			  });
+			  //监听超级代理功能操作
+			  form.on('switch(zagent)', function(obj){
+			  	//this.value存的是用户id，obj.elem.checked返回是是否
+			    //layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
+			     var uId = this.value;
+			     var ischecked = obj.elem.checked == true ? 1 : 0; 
+			     var zData = {
+			     	u_id:uId,
+			     	have_empower:ischecked,
+			     	m_name:a_name
+			     };
+			     $.ajax({
+			     	type:"post",
+			     	url: weburl+"/users_admin/superVip",
+			     	data:JSON.stringify(zData),
+					dataType:"json",
+					  contentType:"application/json",
+					success:function(data){
+					  	if(data.status == 1){
+					  		alert("修改成功！")
+					  	}else{
+					  		alert(data.msg);
+					  	}
+					}
+			     });
+			  });
+			  
+			  
+			  //监听工具条
+			  table.on('tool(test)', function(obj){ //注：tool是工具条事件名(toolbar)，test是table原始容器的属性 lay-filter="对应的值"
+				  var data = obj.data; //获得当前行数据
+				  var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
+				  var tr = obj.tr; //获得当前行 tr 的DOM对象
+				 
+				  if(layEvent === 'edit'){ //编辑
+				    var u_id = data.u_id; //获取当前行的会员id
+				    tan(u_id)
+				
+				  } else if(layEvent === 'open'){
+				  	//do something 解封
+				  	var u_id = data.u_id; //获取当前行的会员id
+				  	var user={u_id:u_id,is_close:0,m_name:a_name};
+					$.ajax({
+					  url: weburl + "/users_admin/close_user",
+					  type:"PUT",
+					  data:JSON.stringify(user),
+					  dataType:"json",
+					  contentType:"application/json",
+					  success:function(res){
+					  		if (res.status == 1) {
+					  			alert("解封成功");
+					  			window.location.reload();
+					  		} else{
+					  			alert("解封失败");
+					  			window.location.reload();
+					  		}
+					   }
+					});
+				  }else if(layEvent === 'close'){
+				  	//do something 封h号
+				  	layer.confirm('真的要封号吗', function(){
+     					var u_id = data.u_id; //获取当前行的会员id
+					  	var user={u_id:u_id,is_close:1,m_name:a_name};
+						$.ajax({
+						  url: weburl + "/users_admin/close_user",
+						  type:"PUT",
+						  data:JSON.stringify(user),
+						  dataType:"json",
+						  contentType:"application/json",
+						  success:function(res){
+						  		if (res.status == 1) {
+						  			alert("封号成功");
+						  			window.location.reload();
+						  		} else{
+						  			alert("封号失败");
+						  			window.location.reload();
+						  		}
+						   }
+						});
+                   });
+				  }else if(layEvent === 'recharge'){
+				  	//do something 封h号
+     					var u_id = data.u_id; //获取当前行的会员id
+     					tanLayer(u_id);
+				  }
+				});
+			  
+			});
+//	弹框
+	function tan(u_id) {
+		layui.use('layer', function(){
+			  var layer = layui.layer;
+			  layer.open({ 
+			  	      type: 1,
+					  title: '修改会员信息',
+					  shadeClose:true,
+					  area: ['460px', '480px'],
+					  content: $('#modify'),
+					  end:function () {
+				               window.location.reload();
+				         }
+					
+     				  });
+     					   //回显
+					$.ajax({
+						url: weburl + "/users_admin?u_id="+u_id,
+						type:"get",
+						async:true,
+						success:function (res) {
+							if (res.status == 1) {
+								$("#payname").val(res.data.u_alipayname);
+								$("#payno").val(res.data.u_alipayno);
+								$("#bankname").val(res.data.u_bankname);
+								$("#banknum").val(res.data.u_bankno);
+								$("#bankaddr").val(res.data.u_bankaddr);
+								/*$("#coincnt").val(res.data.u_coincnt);
+								$("#goldcnt").val(res.data.u_goldcnt);*/
+								$("#level").val(res.data.proxy_level);
+								/*当前代理级别,代理级别修改不能比当前的低*/
+								/*var nowLevel = res.data.proxy_level;
+								$("#level option").each(function(){
+									if($(this).val() < nowLevel){
+										$(this).hide();
+									}
+								});*/
+							}else{
+								alert(res.msg); //回显错误信息
+							}
+							}
+						});
+		});
+		$("#commitBtn").click(function () {
+			var coincnt = $("#coincnt").val();
+			var goldcnt = $("#goldcnt").val();
+			if(coincnt == ""){
+				coincnt = 0;
+			}
+			if(goldcnt ==""){
+				goldcnt = 0; 
+			}
+			var reseviseuser = {
+				u_id:u_id,
+				m_name:a_name,
+				u_alipayname:$.trim($("#payname").val()),
+				u_alipayno:$.trim($("#payno").val()),
+				u_bankname:$.trim($("#bankname").val()),
+				u_bankno:$.trim($("#banknum").val()),
+				u_bankaddr:$.trim($("#bankaddr").val()),
+				proxy_level:$("#level option:selected").val(),
+				/*u_coincnt:coincnt,
+				u_goldcnt:goldcnt,*/
+			}
+			$.ajax({
+					  url: weburl + "/users_admin/update_user",
+					  type:"PUT",
+					  data:JSON.stringify(reseviseuser),
+					  dataType:"json",
+					  contentType:"application/json",
+					  success:function(res){
+					  		if (res.status == 1) {
+					  			alert("修改成功");
+					  			window.location.reload();
+					  		} else{
+					  			alert(res.msg);
+					  		}
+					   }
+					});
+		})
+		
+	}
+//	弹框vip充值
+	 function tanLayer(u_id) {
+		layui.use('layer', function(){
+			  var layer = layui.layer;
+			  layer.open({ 
+			  	      type: 1,
+					  title: 'vip充值',
+					  shadeClose:true,
+					  area: ['420px', '260px'],
+					  content: $('#rechargeLayer'),
+					  end:function () {
+				               window.location.reload();
+				            }
+					
+     					 });
+     					   //回显
+					
+		});
+		//时时回显金币数据量
+		 $("input[id='rechargeIpt']").bind('input propertychange',function(){
+	                //做一些事情
+	                var val = $(this).val(); 
+	                $("#mathGold").text(val*blval);
+	     })
+		$("#rechargeBtn").click(function () {
+			var rechargeIpt = $.trim($("#mathGold").text());
+			if (rechargeIpt == 0) {
+				alert("充值金额不能等于0")
+			}else{
+				var reseviseuser = {
+					u_id:u_id,
+					m_name:a_name,
+					u_goldcnt:rechargeIpt,
+				}
+				$.ajax({
+						  url: weburl + "/users_admin/recharge",
+						  type:"POST",
+						  data:JSON.stringify(reseviseuser),
+						  dataType:"json",
+						  contentType:"application/json",
+						  success:function(res){
+						  		if (res.status == 1) {
+						  			alert("充值金币成功");
+						  			window.location.reload();
+						  		} else{
+						  			alert(res.msg);
+						  		}
+						   }
+						});
+			}
+				
+		});	
+		
+	}
+	
+	
+	
+		//时间查询
+		layui.use([ 'laydate'], function(){
+		    var $ = layui.$;
+		    var laydate = layui.laydate;
+		    var nowTime = new Date().valueOf();
+		    var max = null;
+		
+		       var start = laydate.render({
+		        elem: '#start_time',
+		        type: 'datetime',
+		        //format:'yyyy/MM/dd',
+		        max: nowTime,
+		        btns: ['clear', 'confirm'],
+		        done: function(value, date){
+		            endMax = end.config.max;
+		            end.config.min = date;
+		            end.config.min.month = date.month -1;
+		        }
+		    });
+		    
+		    var end = laydate.render({
+		        elem: '#end_time',
+		        type: 'datetime',
+		        max:  4073558400000,
+		        //format:'yyyy/MM/dd',
+		        min:nowTime,
+		        done: function(value, date){
+		            if($.trim(value) == ''){
+		                var curDate = new Date();
+		                date = {'date': curDate.getDate(), 'month': curDate.getMonth()+1, 'year': curDate.getFullYear()};
+		            }
+		            start.config.max = date;
+		            start.config.max.month = date.month -1;
+		        }
+		    })
+		 })
+		
+	</script>
+</body>
+</html>
