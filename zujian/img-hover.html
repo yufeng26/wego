@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图片经过显示透明层</title>
+		<style>
+			.wrap{width:1210px; clear:both; display:table;}
+.wrap li{width:500px; height:350px; overflow:hidden; border:1px solid #666; float:left; margin:50px; position:relative;}
+.wrap li img{width:500px;}
+
+.box{width:100%; padding-top:350px; position:absolute; left:0; top:0;}
+p{width:100%; height:50px; line-height:50px; color:#fff; text-align:center; background:#000; opacity: 0.7; filter: alpha(opacity=70);}
+		</style>
+	</head>
+	<body>
+		<ul id="ul1" class="wrap">
+    <li>
+        <img src="images/1.jpg">
+        <div class="box"><p>111111</p></div>
+    </li>
+    <li>
+        <img src="images/2.jpg">
+        <div class="box"><p>222</p></div>
+    </li>
+    <li>
+        <img src="images/3.jpg">
+        <div class="box"><p>333</p></div>
+    </li>
+    <li>
+        <img src="images/4.jpg">
+        <div class="box"><p>444</p></div>
+    </li>
+ 
+</ul>
+	</body>
+	<script src="../lib/jquery-1.12.2.js"></script>
+	<script>
+		
+window.onload=function ()
+{
+	var oUl=document.getElementById('ul1');
+	var aDiv=oUl.getElementsByTagName('div');
+	var timer=null;
+
+	for(var i=0;i<aDiv.length;i++)
+	{
+		aDiv[i].onmouseover=function ()
+		{
+			var box=this;
+			
+			clearInterval(this.timer);
+			this.timer=setInterval(show,30);
+			
+			function show()
+			{
+				if(box.offsetTop==-50)
+				{
+					clearInterval(timer);
+				}
+				else
+				{
+					box.style.top=box.offsetTop-10+'px';	
+				};
+				
+			};
+		};	
+		
+
+		aDiv[i].onmouseout=function ()
+		{
+			var box=this;
+			
+			clearInterval(this.timer);
+			this.timer=setInterval(show,30);
+			
+			function show()
+			{
+				if(box.offsetTop==0)
+				{
+					clearInterval(timer);
+				}
+				else
+				{
+					box.style.top=box.offsetTop+10+'px';	
+				};
+				
+			};	
+		};
+
+	};
+	
+}
+
+	</script>
+</html>
